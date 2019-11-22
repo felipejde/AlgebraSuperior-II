@@ -1,0 +1,224 @@
+\documentclass[12pt,oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usepackage[normalem]{ulem}
+\usepackage{cancel}
+\usepackage{soul}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage{mathrsfs}
+\usepackage{makeidx}
+\newtheorem{prob}{Problema}
+\addtolength{\hoffset}{-2cm}
+\addtolength{\textwidth}{4cm}
+\addtolength{\voffset}{-2.5cm}
+\addtolength{\textheight}{5cm}
+\pagestyle{empty}
+
+
+\begin{document}
+
+
+\begin{flushright}
+{\large\textbf{Tarea 3} \textnormal{Cova Pacheco Felipe de Jes\'us}, \textnormal{Domingo 6 de septiembre de 2015}}
+\end{flushright}
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Demuestra o da un contraejemplo.\\
+a. Si $p$ es un primo, entonces $p^2 + 1$ es primo.\\
+b. Si $p$ es un primo, entonces $p+2$ es primo.\\
+c. Si $p$ es un primo tal que $p|ab$, entonces $p|a$ o $p|b$.\\
+d.  Hay primos de la forma $n! + 1$.
+\end{prob}
+
+\begin{proof}
+a) Falso, si $p=3$, entonces $p^2 + 1 = 10$ que no es primo\\\
+
+b) Falso, si $p = 13$ entonces $p+2 = 15$ no es primo\\\
+
+c) Verdadero, si $a = P_1^{n_1} \cdots P_t^{n_i}$ y $b = P_1^{m_1} \cdots P_t^{m_t}$\\
+entonces $ab = P_1^{n_1+m_1} \cdots P_t^{n_t + m_t}$ y como $P|ab$\\
+entonces $P = P_i$ para alguna $i \in \{1,...,t\}$ y $n_i+m_i \geq 1$\\
+lo que implica que $n_i \geq 1$ o $m_i \geq 1$ es decir $p|a$ o $p|b$.\\\
+
+d)Verdadero, $3! + 1 = 6 + 1 = 7$ que es primo.\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Encuentra nueve n\'umeros compuestos consecutivos.
+\end{prob}
+
+\begin{proof}
+Consideramos los n\'umeros consecutivos $10!+2, 10! + 3, 10! + 4, 10! + 5, 10! + 6, 10! + 7, 10! + 8, 10! + 9, 10! + 10$.\\
+Cada uno de ellos es compuesto, pues $i|10!+i$ para toda $i \in \{2, \cdots, 10\}$.\\\\
+\end{proof}
+
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Cu\'antos primos hay menores o iguales a $131$?
+\end{prob}
+
+\begin{proof}
+Hay $32$ primos, a saber: $2,3,5,7,11,17,19,23,29,31,37,41,43,47,53,59,61,67,71,\\73,79,83,89,87,101,103,107,109,113,127$ y $131$.\\\\
+\end{proof}
+
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Determina cu\'ales de las siguientes ecuaciones diofantinas tienen soluci\'on. En el caso de tenerla, encuentra la soluci\'on general.\\
+a. $14x + 16y = 15$\\
+b. $15x + 21y = 39$\\
+c. $1776x + 1976y = 4152$\\
+d. $1076x + 2076y = 1155$
+\end{prob}
+
+\begin{proof}
+a) $14x + 16y = 15$ no tiene soluci\'on, pues $(14,16) = 2$ y $2 \nmid 15$.\\\
+
+b) $15x + 121y = 39$ si tiene soluci\'on, pues $(15, 121) = 1$.\\
+encontremos una soluci\'on particular.\\
+$121 = 8*15+1$, por lo que $1 = 121 - 8*15$, multiplicando por 39 en ambos lados llegamos a 
+$39 = 121 * 39 - 15(39*8)$\\
+Entonces $X_0 = 39$ y $Y_0 = 39*8$ son soluciones particulares,\\
+as\'i $x = 39 + 121t$ y $y = 39*8 - 15t$, $t \in \mathbb{Z}$ son las soluciones generales.\\\
+
+c) $1776x + 1976y = 4152$\\
+$1976 = 1*1776 + 200$\\
+$1776 = 8*200 + 176$\\
+$200 = 1*176 + 24$\\
+$176 = 7*24 + 8$\\
+$24 = 8*3 + 0$\\
+Entonces $(1776, 1976) = (24,8) = 8$ y $8|4152$\\
+Por lo tanto La ecuaci\'on tiene soluci\'on\\
+Encontremos una soluci\'on particular\\
+$8 = 176 - 7*24 = 200-24-7*24 = 200-8*24 = 200-8(200-176)$\\
+$= -7*200+8*176 = -7*200+8(1776-8*200) = -71*200+8*1776$\\
+$= -71*(1976-1776)+8*1776 = -71*1976+79*1776$\\
+As\'i $8= -71(1976)+79(1776)$, multiplicando por $519$ de ambos lados tenemos que\\
+$4152 = -36849(1976) + 41001(1776)$\\
+Entonces $X_0= -36849$ y $Y_0= 41001$ son soluciones particulares y as\'i:\\
+$x= -36849 + \frac{1976}{8}(t)$ y $y= 41001 - \frac{1776}{8}(t), t \in \mathbb{Z}$\\
+son las soluciones generales.\\\
+
+d) $1076x + 2076y = 1155$\\
+$2076 = 1*1076 + 1000\\
+1076 = 1*1000 + 76\\
+1000 = 13*76 + 12\\
+76 = 6*12 + 4\\
+12 = 3*4 + 0\\$
+Entonces\\
+$(1076, 2076) = (12,4) = 4$. y $4 \nmid 1155$\\
+Por lo tanto La ecuaci\'on no tiene soluci\'on.\\\\
+\end{proof}
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Una alcanc\'ia contiene monedas de $5, 10$ y $25$ centavos. En total contiene 4 d\'olares y hay el doble de monedas de $25$ centavos que monedas de $10$ centavos. Encuentra el n\'umero de combinaciones posibles si hay m\'as monedas de $25$ centavos que de $5$ centavos.
+\end{prob}
+
+\begin{proof}
+Sean $x, y$ y $z$ la cantidad de monedas de $5, 10$ y $25$ centavos respectivamente.\\
+Entonces $400 = 5x + 10y + 25z$ adem\'as\\
+sabemos que $x = 2y$ por lo que\\
+$400 = 5x + 10y + 50y = 5x + 60y$\\
+como $(5,60) = 5$ y $5|900$, la ecuaci\'on tiene soluci\'on\\
+para encontrar una soluci\'on particular expresamos $(5, 60)$ como combinaci\'on lineal de $5$ y $60$, es decir:\\
+$5 = -11*5 + 60$\\
+Multiplicamos por $80$, entonces\\
+$400 = -880*5 + 80*60$\\
+Entonces $X_0= -880$ y $Y_0= 80$ son una soluci\'on particular de la ecuaci\'on $400 = 5x + 60y$.\\
+Pero s\'olo las soluciones positivas nos dar�n combinaciones que resuelvan el problema\\
+Las soluciones generales de la ecuaci\'on est\'an dadas por:\\
+$x=-880 + \frac{60}{5}(t) = -880 + 12t$ y $y=80 - \frac{5}{3}(t) = 80 - t$\\
+Entonces para que $x \geq 0$ necesitamos que $t \geq 74$ y para que $y \geq 0$ necesitamos\\
+que $t \geq 80$. Entonces las posibles combinaciones est\'an dadas por:\\
+$x=-880 + 12t$ y $y=80 - t$, $t \in \{74, 75, \cdots. 80\}$\\\\
+\end{proof}
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Encuentra el residuo de $4^{117}$ cuando es dividido por $15$.
+\end{prob}
+
+\begin{proof}
+Tenemos que $4 \equiv 11$ (mod 15), entonces\\
+$4^{117} \equiv 11^{117}$ (mod 15)\\
+y como $11^2 = 121 \equiv 1$ (mod 15) podemos escribir\\
+$11^{117} = 11^{2*58+1} = (11^2)^{58+1} = (11^2)^{58}*11$\\
+As\'i $4^{117} \equiv 11^{117} \equiv (11^2)^{58}*11 \equiv (1)^{58}*11 \equiv 11$ (mod 15)\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Si hoy es viernes, qu\'e d\'ia ser� en 1976 d\'ias?
+\end{prob}
+
+\begin{proof}
+Supongamos que hoy es el d\'ia $x$, como viernes\\
+es el 5to d\'ia de la semana, tenemos que\\
+$x \equiv 5$ (mod 7)\\
+por otro lado $1976 \equiv 2$ (mod 7) entonces $x + 1976 \equiv 0$ (mod 7)\\
+Por lo que el d\'a $x+1976$ es el s\'eptimo de la semana,\\
+es decir si hoy es viernes, en $1976$ d\'ias es domingo.\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Encuentra el residuo de $1! + 2! + 3! + ... + 1000!$ al ser dividido por:\\
+a. $12$\\
+b. $11$
+\end{prob}
+
+\begin{proof}
+a) Notamos que cuando $k \geq 4$, se tiene que $12|k!$\\
+y as\'i $k! \equiv 0$ (mod 12)\\
+entonces $1! + 2! + \cdots + 1000! \equiv 1! + 2! + 3!$ (mod 12) $\equiv 1 + 2 +6$ (mod 12) $\equiv 9$ (mod 12)\\
+Por lo tanto cuando $1! + 2! + \cdots + 1000!$ es dividido por $12$, el residuo es $9$.\\\
+
+b) Notamos que cuando $k \geq 11$ tenemos que $k! \geq 0$ (mod 11)\\
+as\'i $1! + \cdots + 1000! \equiv 1! + 2! + \cdots + \10!$ (mod 11)\\
+$\equiv 1 + 2 + 6 + 24 + 120 + 740 + 5040 + 40320 + 362880 + 3628800$ (mod 11)\\
+$\equiv 1 + 2 + 6 + 2 + 10 + 3 + 2 + 5 + 1 + 10$ (mod 11)\\
+$\equiv 9$ (mod 11).\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Encuentra el m\'inimo residuo de $(p-1)!$ m\'odulo $p$ para $p = 3,5,7$.
+\end{prob}
+
+\begin{proof}
+Para $P=3$\\
+$(P-1)! = 2! = 2$ y $3 \equiv 2$ (mod 3)\\\
+
+Para $P=5$\\
+$(P-1)! = 4! = 24$ y $24 \equiv 4$ (mod 5)\\\
+
+Para $P=7$\\
+$(P-1)! = 6! = 720$ y $720 \equiv 6$ (mod 7)
+\end{proof}
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Demuestra que si $2a \equiv 0$ (mod p) y $p$ es un primo impar, entonces $a \equiv 0$ (mod p).
+\end{prob}
+
+\begin{proof}
+Suponemos que $2a \equiv 0$ (mod P) y $P$ es impar.\\
+Por lo anterior $P|2a$ y como $P$ es impar\\
+tenemos que $p \geq 3$, por lo que $P$ no puede dividir a $2$\\
+entonces $P|a$ y as\'i $a \equiv 0$ (mod p)
+\end{proof}
+
+\end{document}
+
+
+
+

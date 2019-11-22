@@ -1,0 +1,203 @@
+\documentclass[12pt,oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usepackage[normalem]{ulem}
+\usepackage{cancel}
+\usepackage{soul}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage{mathrsfs}
+\usepackage{makeidx}
+\newtheorem{prob}{Problema}
+\addtolength{\hoffset}{-2cm}
+\addtolength{\textwidth}{4cm}
+\addtolength{\voffset}{-2.5cm}
+\addtolength{\textheight}{5cm}
+\pagestyle{empty}
+
+
+\begin{document}
+
+
+\begin{flushright}
+{\large\textbf{Tarea 2} \textnormal{Cova Pacheco Felipe de Jes\'us}, \textnormal{Domingo 6 de septiembre de 2015}}
+\end{flushright}
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Encuentra los enteros positivos menores o iguales a $3076$ que son divisibles por $23$.
+\end{prob}
+
+\begin{proof}
+Aplicando el algoritmo de la divisi\'on para $3076$ y $23$ obtenemos que $3076 = 23 * 133 + 17$\\
+Por lo tanto $23 * i$ es un entero positivo menor a $3076$ divisible por 23, para cada $i \in 20,...,133\}$\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Encuentra los enteros positivos que est\'an entre $1976$ y $3776$ y que son divisibles entre $13$ y $15$.
+\end{prob}
+
+\begin{proof}
+Para que un n\'umero sea divisible entre $13$ y $15$, debe ser divisible por su producto $13*15=195$.\\
+aplicando el algoritmo de la divisi\'on para $3776$ y $195$ obtenemos que $3776 = 195*19+71$\\
+El m\'inimo m\'ultiplo de $195$ mayor que $1976$ es: $195 * 11$\\
+Por lo tanto Los n\'umeros entre $1976$ y $3776$ divisibles por $13$ y $15$ son $195*i$ con $i \in \{11,...,19\}$ \\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Considera que $a, b$ y $c$ son enteros. Demuestra o da un contraejemplo:\\
+a. Si $a^2 =b^2$ entonces $a=b$.\\
+b. Si $a|b$ y $b|a$ entonces $a=b$.\\
+c. Si $a|bc$ entonces $a|b$ y $a|c$.
+\end{prob}
+
+\begin{proof}
+a) Falso, sea $a = -3$ y $b = 3$\\
+entonces $(-3)^2 = (9) = (3)^2$, pero $-3 \neq 3$.\\\
+b) Falso, $3|-3$ y $-3|3$ pero $-3 \neq 3$\\\
+c) Falso, $6|6*3$ pero $6\nmid3$.\\\\
+\end{proof}
+
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Prueba que cualesquiera dos enteros consecutivos son primos relativos.
+\end{prob}
+
+\begin{proof}
+Consideramos $(x, x+1) = d$ y suponemos que $d \geq 2$.\\
+entonces $d|x$ y $d|x+1$, es decir, existen\\
+$m,n \in \mathbb{N}$ tales que $x=dm$ y $x+1 = dn$.\\
+Como $x+1 > x$, entonces $n \geq m+1$, lo que\\
+implica que $nd \geq md + d$, as\'i $x+1 \geq x+d!$, $d \geq 2$\\
+Entonces debe ocurrir que $d=1$.\\\\
+\end{proof}
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Usando un razonamiento recursivo encuentra $[24, 28, 36, 40, 48]$.
+\end{prob}
+
+\begin{proof}
+$[24,28,36,40,48] = [24,[28,36,40,48]] = [24,[28,[36,40,48]]]$\\
+$= [24,[28,[36,[40,48]]]] = [24,[28,[36,240]]]$
+$= [24,[28,720]] = [24,5040] = 5040$\\\\ 
+\end{proof}
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Encuentra $[a,b]$, en los casos en que $a|b$, $b|a$, $a=1$ y $a=b$.
+\end{prob}
+
+\begin{proof}
+$\bullet$ Si $a|b$, entonces $[a,b] = b$.\\
+$\bullet$ Si $b|a$, entonces $[a,b] = a$.\\
+$\bullet$ Si $a=1$, entonces $[a,b] = b$.\\
+$\bullet$ Si $a=b$, entonces $[a,b] = a = b$.\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Sean $a,b$ y $c$ n\'umero enteros. Demuestra las siguientes propiedades:\\
+b. $(a,[b,c]) = [(a,b),(a,c)]$\\ 
+c. $[a,(b,c)] = ([a,b],[a,c])$
+\end{prob}
+
+\begin{proof}
+b) Sean\\
+$a = P_1^{a_1} \cdots P_t^{a_t}$\\
+$b = P_1^{b_1} \cdots P_t^{b_t}$\\
+$c = P_1^{c_1} \cdots P_t^{c_t}$\\
+entonces $(a,[b,c]) =$  
+\begin{equation*}
+\prod_{i=1}^t  P_i^{min\{a_i,max\{b_i,c_i\}\}} \end{equation*}\\
+y $[(a,b), (a,c)]$ =  \begin{equation*} \prod_{i=1}^t  P_i^{max\{min\{a_i,b_i\}, min\{a_i,c_i\}\}} \end{equation*}\\
+y como $min\{a_i, max\{b_i,c_i\}\} = max\{min\{a_i,b_i\}, min\{a_i,c_i\}\}$\\
+para cualquier eleccio\'on de $a_i, b_i, c_i$, conclu\'imos\\
+que $(a,[b,c]) = [(a,b), (a,c)]$.\\\
+
+c) De manera an\'aloga al inciso anterior, utilizando\\
+que $max\{a,min\{b,c\}\} = min\{max\{a,b\},max\{a,c\}\}$\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Utilizando el algoritmo de Euclides expresa como combinaci\'on lineal el MCD de las siguientes parejas de enteros.\\
+a. $1776$ y $3076$\\ 
+b. $4076$ y $2076$
+\end{prob}
+
+\begin{proof}
+$3076 = 1*1776 + 1300\\
+1776 = 1*1300 + 476\\
+1300 = 2*476 + 398\\
+476 = 1*348 + 128\\
+348 = 2*128 + 92\\
+128 = 1*92 + 36\\
+92 = 2*36 + 20\\
+36 = 1*20 + 16\\
+20 = 1*16 + 4\\
+$Por lo tanto $(3076, 1776) = (16,4) = 4$.\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Encuentra el n\'umero de ceros que se encuentran al final de $378!$.
+\end{prob}
+
+\begin{proof}
+Sea $\alpha_2$ y $\alpha_5$ las potencias m\'as altas de $2$ y $5$ que dividen a $378!$ respectivamente. Claramente $\alpha_2 \geq \alpha_5$.\\
+Encontremos $\alpha_5$\\
+$
+378 = 5*75 + 3\\
+378 = 5^2*15 + 3\\
+378 = 5^3*3 + 3\\
+$Por lo tanto La potencia m\'as alta de $5$ que divide a $378$ es $93$.\\
+Como $\alpha_2 \geq \alpha_5$ tenemos que $\alpha_{10} = 93$, que es el n\'umero de ceros al final de $378!$\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Encuentra la potencia mas alta de $7$ que divide a $1001!$.
+\end{prob}
+
+
+\begin{proof}
+Sea $\alpha_7$ la potencia m\'as alta de $7$ que divide a $1001!$\\
+Notamos que:\\
+$1001 = 7*143 + 0$\\
+$1001 = 7^2*20 + 21$\\
+$1001 = 7^3*2 + 315$\\
+Por lo tanto $\alpha_7 = 143 + 20 + 2 = 165$.\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, capítulo, ejercicio.]
+Dec\'imos que un n\'umero $n$ es poderoso si siempre que $p$ es un factor primo de $n$, $p^2$ tambi\'en lo es.\\
+a. Encuentra los primeros $3$ n\'umeros poderosos.\\
+b. Muestra que cualquier n\'umero poderoso puede ser expresado de la forma $a^2b^3$, donde $a$ y $b$ son enteros positivos.
+\end{prob}
+
+\begin{proof}
+Sea $n$ un n\'umero poderoso. Considerando la descomposici\'on en primos de $n$, podemos escribir.\\
+$n = P_1^{n_1} \cdots P_r^{n_r} * P_{r+1}^{n_{r+1}} \cdots P_t^{n_t}$\\
+de tal forma que $2|n_i$ para $i \in \{1,...,r\}$ y $2 \nmid n_i$ entonces $n_i = 2m_i + 1$ y como $n$ es poderoso sabemos que $n_i \geq 2$ para toda $i$.\\
+entonces $m_i \geq 1$ y as\'i podemos poner a $n_i$ de la forma $n_i = 2(m_i -1)+3$.\\
+definimos $a = P_1^{n_1/2} \cdots P_r^{n_r/2} * P_{r+1}^{(n_{r+1}-3)/2} \cdots P_t^{(n_i - 3)/2}$ y $b = P_{r+1} \cdots P_t$\\
+De esta forma $a^2b^3 = (P_1^{n_1/2} \cdots P_r^{n_r/2} * P_{r+1}^{(n_{r+1}-3)/2} \cdots
+P_{r+1}^{(n_{t}-3)/2})^2 (P_{r+1} \cdots P_t)^3$\\
+$= P_1^{n_1} \cdots P_r^{n_r} * P_{r+1}^{n_{r+1}-3} \cdots P_t - 3 * P_{r+1}^3 \cdots P_t^3$\\
+$= P_1^{n_1} \cdots P_t^{n_t} = n$.
+\end{proof}
+
+\end{document}
+
+
+
+

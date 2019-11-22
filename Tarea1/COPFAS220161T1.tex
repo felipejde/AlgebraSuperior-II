@@ -1,0 +1,286 @@
+\documentclass[12pt,oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usepackage[normalem]{ulem}
+\usepackage{cancel}
+\usepackage{soul}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage{mathrsfs}
+\usepackage{makeidx}
+\newtheorem{prob}{Problema}
+\addtolength{\hoffset}{-2cm}
+\addtolength{\textwidth}{4cm}
+\addtolength{\voffset}{-2.5cm}
+\addtolength{\textheight}{5cm}
+\pagestyle{empty}
+
+
+\begin{document}
+
+
+\begin{flushright}
+{\large\textbf{Tarea 1} \textnormal{Felipe de Jes\'us Cova Pacheco}, \textnormal{Domingo 6 de septiembre de 2015}}
+\end{flushright}
+
+\begin{prob} %[Fuente, cap√≠tulo, ejercicio.]
+Sean $(A, \leq)$ un conjunto parcialmente ordenado y $\emptyset \neq B \subseteq A$. Recordemos que una cota inferior de $B$ es un elemento $d \in A$ tal que $d \leq$ b para todo $b \in B$. El Ìnfimo de B es la mayor de las cotas inferiores de $B$, es decir, es una cota inferior $d_0$ de $B$ tal que $d \leq d_0$ para toda cota inferior $d$ de $B$. De manera complementaria se define el supremo de B como la menor de las cotas superiores de $B$. Un conjunto parcialmente ordenado $(A, \leq)$ es una
+retÌcula si para cualesquiera elementos $a, b \in A$ el conjunto $\{a, b\}$ tiene tanto \'infimo como
+supremo.\\\
+
+Demuestre que:\\
+i. Si $S \neq \emptyset$, entonces el conjunto potencia $\wp(S)$ junto con la inclusi\'on de conjuntos es una ret\'icula que, adem\'as tiene un \'unico elemento m\'aximo bajo la contenci\'on.\\
+ii. De un ejemplo de un conjunto parcialmente ordenado que no sea una ret\'icula.\\
+iii. De un ejemplo de una ret\'icula que no tenga elemento m\'aximo bajo la relaci\'on de orden
+y un ejemplo de un conjunto parcialmente ordenado con dos elementos m\'aximos.
+\end{prob}
+
+\begin{proof}
+i) Claramente $\wp(s) \neq 0 $ y la relaci\'on $\subseteq$ es reflexiva, transitiva y sim\'etrica\\
+Por lo tanto $(\wp(s), \subseteq)$ es un COPO\\
+Adem\'as para todo $x$ en $\wp(s) $ se tiene que $x \subseteq S$\\
+Por lo tanto S es el \'unico elemento m\'aximo\\
+Si $A, B$ en $\wp(s)$, entonces $\{A,B\}$ tiene a $A\cup B$ como supremo y a $A\cap B$ como \'infimo\\
+Por lo tanto $\wp(s)$ es una ret\'icula.\\\
+
+ii) Si $A = \{1,2,3\}$ y $\sim$ est\'a definida para $a,b \in A$\\
+como $a \sim b$ entonces $a \leq b$\\
+entonces $(a, \sim)$ es COPO\\\
+pero $\{2,3\}$ no tiene supremo, por lo que no es retÌcula.\\\
+
+iii) $- (\mathbb{N}, \leq )$ es una ret\'icula sin elemento m\'aximo\\
+$- (\{1,2,3\}, a \mid b)$ es un COPO con dos elementos m\'aximos.\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, cap√≠tulo, ejercicio.]
+Una retÌcula $(A, \leq)$ se dice que es completa si cualquier subconjunto no vac\'io de $A$ tiene
+tanto \'infimo como supremo. Una funci\'on de conjuntos parcialmente ordenados $f : A \rightarrow B$
+se dice que preserva el orden si siempre que $a \leq_A  a'$ entonces $f(a) \leq_B f(b)$. Demuestre que
+una funci\'on $f$ que preserva orden de una ret\'icula completa $A$ en s\'i misma tiene al menos un
+elemento que se queda fijo (es decir, existe $a \in A$ tal que $f(a) = a$).
+\end{prob}
+
+\begin{proof}
+Como $A \subseteq A$. y $A \neq \emptyset$\\
+por ser $(A, \leq)$ completa, tenemos que A tiene \'infimo a\\
+Sea $S = \{ x$ en $A \mid x \leq f(x)\}$\\
+claramente $a \subseteq f(a)$ (pues $f(a) \in A$)\\
+entonces $a$ en $S$ y $S \neq \emptyset$\\
+Por ser $(A, \leq)$ completa y $S \neq \emptyset$\\
+Sabemos que S tiene supremo s\\
+Entonces para todo $x$ en $S, x \leq S$ como f presencia orden, se cumple que $x \leq f(x) \leq f(s)$\\
+Entonces $f(s)$ es cota superior de $S$ y entonces $s \leq f(s)$\\
+Adem\'as $f(s) \leq f(f(s))$ entonces $f(s)$ en $S$\\
+y como s es supremo de S\\
+se cumple que $f(s) \leq S$\\
+Por lo tanto $f(s) = S$\\\\
+\end{proof}
+
+
+
+\begin{prob} %[Fuente, cap√≠tulo, ejercicio.]
+Sea $S \subseteq  \mathbb{R}^2$ con $S = \{(x, y) \in  \mathbb{R}^2 \mid y \leq 0\}$. Defina el orden $\leq$ en $S$ como:\\
+$(x_1, y_1) \leq (x_2, y_2)$ si y s\'olo si $x_1 = x_2$ y $y_1 \leq y_2$.\\
+Demuestre que $(S, \leq)$ es un COPO y que $S$ tiene infinidad de elementos m\'aximos.
+\end{prob}
+
+\begin{proof}
+Reflexividad:\\
+Si $(X_1, Y_1)$ en $S$ entonces $X_1 = X_1$ y $Y_1 \leq Y_1$\\
+Por lo tanto $(X_1, Y_1) \leq (X_1, Y_1)$\\
+Transitividad:\\
+Si  $(X_1, Y_1) \leq (X_2, Y_2)$ y $(X_2, Y_2) \leq (X_3, Y_3)$\\
+entonces $X_1 = X_2 = X_3$ y $X_1 \leq X_2 \leq X_3$\\
+Antisimetr\'ia:\\
+si $(X_1, Y_1) \leq (X_2, Y_2)$ y $(X_2, Y_2) \leq (X_1, Y_1)$
+entonces $X_1 = X_2$, $Y_1 \leq Y_2$, $X_1 = X_2$ y $Y_2 \leq Y_1$\\
+Por lo tanto $(X_1, Y_1) = (X_2, Y_2)$\\
+Entonces $(S, \leq)$ es COPO y para cada $x$ en $\mathbb{R}, (X,0)$ es un elemento m\'aximo de S\\\\
+\end{proof}
+
+
+
+\begin{prob} %[Fuente, cap√≠tulo, ejercicio.]
+Un anillo $R$ donde todo elemento $a \in R$ cumple que $a^2 = a$ es llamado anillo Booleano.\\
+Demuestre que:\\
+a. Si R es anillo Booleano entonces R es conmutativo.\\
+b. Si R es anillo Booleano entonces $a + a = 0$.\\
+c. De un ejemplo de un anillo Booleano.
+\end{prob}
+
+\begin{proof}
+a) Sean $x,y$ en $\mathbb{R}$\\
+entonces $(x,y)^2 = x^2 + xy + yx + y^2$\\
+y como R es booleano $(x,y)^2 = x + y$\\
+entonces $x + xy + yx + y = x + y$\\
+entonces $xy = -yx = yx$,            $(-yx)^2 = -yx = yx$\\
+Por lo tanto R es conmutativo\\\
+
+b) $ (a+a)^2 = a+a$ por ser R booleano\\
+y $(a+a)^2 = a^2 + 2a^2 + a^2 = a+a+a+a$\\
+de lo anterior se sigue que $a+a=0$\\\
+
+c)$ - \mathbb{Z}_2, \mathbb{Z}_2 x \geq _2$\\
+$- \forall S$ conjunto, $(\wp(s), \subseteq)$\\
+$\mathbb{Z}_2 x \mathbb{Z}_2 \cong \wp(\{a,b\})$\\\\
+\end{proof}
+
+\begin{prob} %[Fuente, cap√≠tulo, ejercicio.]
+Demuestre que un anillo finito con m\'as de un elemento y sin divisores de cero es un anillo
+con divisi\'on.
+\end{prob}
+
+\begin{proof}
+Sea $A$ con m\'as de un elemento y sea $a$ en $A$, $a \neq 0$\\
+definimos $f_G: A$ entonces $A$, es inyectiva pues si $xa = ya$,\\
+como $A$ no tiene divisores de cero y $a \neq 0$ conclu\'imos que $x = y$.\\
+Dado que A es fin\'ito y $f_G$ inyectiva, tenemos que $f_a$ es biyectiva\\
+entonces existe $x$ en $A$ tal que $a = az$.\\
+ahora si $y$ en $A$, $y \neq 0$. Entonces existe $x \in A$ tal que\\
+$xa = y$ lo que implica que $y = xa = xaz = yz$\\
+Por lo tanto $A$ tiene elemento identidad por la derecha.\\
+Analogamente $A$ tiene identidad izquierda y por lo tanto identidad e.\\
+Finalmente, para cada $a$ en $A$, tenemos que $f_a$ es biyectiva,\\
+entonces existe $x \in A$ tal que $f(x) = xa = e$, es decir $x = a^{-1}$
+\end{proof}
+
+\begin{prob} %[Fuente, cap√≠tulo, ejercicio.]
+Sea R un anillo con m\'as de un elemento tal que para todo elemento no cero $a \in R$ existe un
+\'unico $b \in B$ tal que $aba = a$. Demuestre que:\\
+a. $R$ no tiene divisores de cero.\\
+b. $bab = b$.\\
+c. $R$ tiene identidad.\\
+d. $R$ es un anillo con divisi\'on.
+\end{prob}
+
+\begin{proof}
+\end{proof}
+
+
+\begin{prob} %[Fuente, cap√≠tulo, ejercicio.]
+Un elemento de un anillo es nilpotente si $a^n = 0$ para alguna $n \in  \mathbb{N}$. Demuestre que en un anillo conmutativo con $a, b \in R$ nilpotentes, $a + b$ es nilpotente.
+\end{prob}
+
+\begin{proof}
+Sean $a,b \in A$ nilpotentes\\
+entonces $a^m = 0$ y $b^n = 0$ p.a. $m,n \in \mathbb{N}$\\
+entonces $(a+b)^{n+m} = \sum\limits_{i=1}^{m+n}  \-\binom{n+m}{i} a^i b^{m+n-i}$\\
+si $i \leq m$ entonces $m+n-i \geq  n$ entonces\\
+$a^i b^{m+n-i} = 0$\\
+si $i \geq m$ entonces $a^i b^{m+n-i} = 0$\\
+Por lo tanto $(a+b)^{m+n} = 0$\\
+elemento m\'aximo de S\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, cap√≠tulo, ejercicio.]
+Demuestre que son equivalentes para R un anillo:\\
+a. R no tiene elementos nilpotentes no cero.\\
+b. Si $a \in R$ y $a^2 = 0$ entonces $a = 0$.
+\end{prob}
+
+\begin{proof}
+a) implica b)\\
+Sea $a \in R$ tal que $a^2 = 0$\\
+ entonces $a$ es nilpotente por a)\\
+tenemos que $a = 0$\\
+b) implica a)\\
+Sea a un elemento nilpotente de R\\
+y sea n el m\'inimo entero tal que $a^n = 0$\\
+Sup. que a $\neq 0$\\
+- Si $n = 2k$, entonces $k \geq 1$ y $a^n = a^{2k} = (a^k)^2 = 0$\\
+por b) tenemos que $a^k = 0$ !\\
+(pues $k < n$)\\
+- Si $n = 2k +1$ entonces\\
+$a^n+1 = a^{2k + 2} = (a^{k+1})^2 = 0$\\
+por b) tenemos que $a^{k+1} = 0$ !\\
+(pues $k+1 < n$)\\
+Por lo tanto $a = 0$\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, cap√≠tulo, ejercicio.]
+Demuestre que el conjunto:\\
+$\{k - \frac{1}{n} \mid k,n \in  \mathbb{N}\}$\\
+Satisface el Principio de Buen Orden.
+\end{prob}
+
+\begin{proof}
+Sea $S \subseteq \{k - \frac{1}{n} \mid n,k \in \mathbb{N} \}$\\
+entonces existen $N_1, N_2 \subseteq \mathbb{N}$\\
+tales que $S \subseteq \{k - \frac{1}{n} \mid k \in N_1, n \in \mathbb{N}_2 \}$\\
+como $\mathbb{N}$ satistace el PBO\\
+sabemos que $N_1$ y $N_2$ tienen\\
+primer elemento $n_1$ y $n_2$ respectivamente\\
+Conclu\'imos que $n_1 - \frac{1}{n_2}$ es un elemento m\'inimo de S\\\\  
+\end{proof}
+
+
+\begin{prob} %[Fuente, cap√≠tulo, ejercicio.]
+Demuestre que para cualquier $n \in  \mathbb{N}$ se cumple:
+\begin{equation*}
+\sum_{i=1}^n i(i!) = (n+1)! - 1
+\end{equation*}
+\end{prob}
+
+\begin{proof}
+Caso base $n=1$\\
+\begin{equation*}
+\sum_{i=1}^n i(i!) = 1*1! = 1 = (1+1)! -1 = 2 - 1=1\\
+\end{equation*}
+supongamos que se cumple para $n=k$\\
+Sea n=k+1\\
+entonces
+\begin{equation*}
+\sum_{i=1}^{k+1} i(i!) = \sum_{i=1}^k i(i)! + (k+1)(k+1)!\\
+\end{equation*}
+$=(k+1)! - 1 + (k+1)(k+1)! = (k+1)!(1+n+1)-1$\\
+$=(n+2)! - 1$
+\end{proof}
+
+
+\begin{prob} %[Fuente, cap√≠tulo, ejercicio.]
+Una pelota es soltada a una altura de $4$ metros y cada vez que toca el piso rebota a $\frac{3}{4}$
+de la altura previa. øCu\'al es la distancia total que la bola recorre (arriba y abajo) cuando llega a
+la altura m\'axima de su d\'ecimo rebote?
+\end{prob}
+
+\begin{proof}
+$4 + 2 \frac{4}{3} (4) + 2(\frac{4}{3})^2(4) + \dots + 2(\frac{4}{3})^9 (4) + (\frac{4}{3})^{10} 4 $\\\\
+\end{proof}
+
+
+\begin{prob} %[Fuente, cap√≠tulo, ejercicio.]
+Al principio de cada aÒo, se depositan $100$ pesos en una cuenta de ahorros. Al t\'ermino de
+cada aÒo, se paga el 5 \% de inter\'es del monto total existente en la cuenta al principio del aÒo.
+Obtenga una f\'ormula para calcular el monto total del dinero acumulado al inicio del aÒo $n$.
+\end{prob}
+
+\begin{proof}
+$X_0 = 100$\\
+$X_1 = X_0 - X_0 (0.05) + 100$ entonces $X_n = X_{n-1}(1-0.05) + 100$\\
+$X_2 = X_1 - X_1 (0.05) + 100$\\\
+
+$X_n = (X_{n-1} (1 - 0.05) + 100) (1-0.05) + 100$\\
+$X_n = (X_{n-2} (0.95) + 100) (0.95 + 100)$\\
+$\vdots$\\
+$X_n = 100(0.95)^4 + 100 (0.95)^{n-1} + \dots + 100(0.95) + 100$\\
+=
+\begin{equation*}
+\sum_{i=0}^n (100)(0.95)^i
+\end{equation*}
+\end{proof}
+
+\end{document}
+
+
+
+
